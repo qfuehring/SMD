@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def aufg2():
-    print("Übungsblatt00, Aufagbe 1")
+    print("Übungsblatt00, Aufagbe 2")
 
     #Aufgabe b
     print("b)")
