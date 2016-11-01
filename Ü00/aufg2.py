@@ -13,7 +13,7 @@ def aufg2():
     i=1
     while i<21:
         x = 10**-i
-        print("x =",x, "f(x) =",f(x))
+        print("f(",x,") =",f(x))
         i=i+1
 
 if __name__ == '__main__':
