@@ -22,7 +22,7 @@ def aufg1_a():
     phi_0 = (1-gamma)/(E_min**(1-gamma))
     print(phi_0)
     #aufgabenteil a
-    u = 1+np.random.rand(n_sig)*10**9
+    u = np.random.rand(n_sig)
     E = (1-u)**(1/(1-gamma))
 
     tree = ROOT.TTree("Signal_MC", "Signal_MC")
@@ -33,7 +33,10 @@ def aufg1_a():
     f.Write()
     f.Close()
 
-    plt.plot(u,E)
+    plt.hist(E,bins=np.logspace(1,3,50),range=(0,E.max()),log=True)
+    plt.xscale('log')
+    plt.xlabel('Energie')
+    plt.ylabel('Ereignisse')
     plt.show()
 
 if __name__ == '__main__':
