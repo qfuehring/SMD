@@ -21,10 +21,11 @@ def TreesErstellen():
     sigma_x0 = 3.5
     sigma_y0 = 2.6
     rho_0 = 0.9
+    #Da der Koeffzientenvgl. bei Aufgabe a fehlschlug, wird für P1 die selbe Verteilung der y-Werte und Korrelation wie bei P0 verwendet
     mu_x1 = 6
-    mu_y1 = 3                           #ANPASSEN!!!
+    mu_y1 = 3
     sigma_x1 = 3.5
-    sigma_y1 = 2.6                      #ANPASSEN!!!
+    sigma_y1 = 2.6
     cov_0 = np.matrix([[sigma_x0**2,sigma_y0*sigma_x0*rho_0],[sigma_y0*sigma_x0*rho_0,sigma_y0**2]])
 
     u_0_10000 = np.random.multivariate_normal([mu_x0,mu_y0],cov_0,10000)
@@ -36,6 +37,8 @@ def TreesErstellen():
     y_0_1000 = np.zeros(len(u_0_1000[:,0]))
     x_1 = np.zeros(len(u_1[:,0]))
     y_1 = np.zeros(len(u_1[:,0]))
+
+    #selber ümstandlicher Umgang mit ROOT statt ROOT_Numpy/Pandas, da wir erst heute die Anmerkungen bekommen haben ;)
 
     f = ROOT.TFile("./build/eigene_zwei_populationen.root", "RECREATE")
     P_0_10000 = ROOT.TTree("P_0_10000", "P_0_10000")
@@ -96,13 +99,25 @@ def Plotten():
     x_sum = np.concatenate((x_0_10000,x_1))
     y_sum = np.concatenate((y_0_10000,y_1))
 
+    print("P1")
+    print("x =",np.mean(x_1),"pm",np.std(x_1))
+    print("y =",np.mean(y_1),"pm",np.std(y_1))
+    print("P0")
+    print("x =",np.mean(x_0_10000),"pm",np.std(x_0_10000))
+    print("y =",np.mean(y_0_10000),"pm",np.std(y_0_10000))
+    print("P1+P0")
+    print("x =",np.mean(x_sum),"pm",np.std(x_sum))
+    print("y =",np.mean(y_sum),"pm",np.std(y_sum))
+
     #Plotten
     fig, ax_0 = plt.subplots(1,1)
     ax_0.scatter(x_0_10000,y_0_10000,c='b',marker='.',label=r"$P_0$")
     ax_0.scatter(x_1,y_1,c='r',marker='.',label=r"$P_1$")
     ax_0.set_title("zwei Populationen")
+    ax_0.set_ylabel("y")
+    ax_0.set_xlabel("x")
     ax_0.legend(loc='best')
-    fig.savefig("build/scatter_aufg1.pdf")
+    fig.savefig("build/scatter_aufg1.png")
 
 
 if __name__ == '__main__':
