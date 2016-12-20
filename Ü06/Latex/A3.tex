@@ -1,0 +1,40 @@
+\newpage\section*{Aufgabe 3}
+\subsection*{a}
+\begin{equation}
+I(p,n) = -\frac{p}{p+n}\log_2\biggl(\frac{p}{p+n}\biggr)-\frac{n}{p+n}\log_2\biggl(\frac{n}{p+n}\biggr)
+\end{equation}
+\begin{align*}
+& P := \text{Fußball}&\Rightarrow & p = 9\\
+& N := \overline{\text{Fußball}}&\Rightarrow & n = 5
+\end{align*}
+\begin{equation*}
+I(p=9,n=5) \approx 0.94
+\end{equation*}
+
+\subsection*{b}
+\begin{align}
+\text{gain}(a) &= I(p,n) - E(a)\\
+E(a) &= \sum_i \frac{p_i+n_i}{p+n}I(p_i,n_i)
+\end{align}
+\begin{align*}
+& i = 1 &\Rightarrow & a := \text{Wind}\\
+&&\Rightarrow & p_1 := 3\\
+&&\Rightarrow & n_1 := 3\\
+&&\Rightarrow & I(p_1=3,n_1=3) = 1\\\\
+& i = 0 &\Rightarrow &  a := \overline{\text{Wind}}\\
+&&\Rightarrow & p_1 := 6\\
+&&\Rightarrow & n_1 := 2\\
+&&\Rightarrow & I(p_1=6,n_1=2) = \approx 0.89\\
+\end{align*}
+\begin{align*}
+E(\text{Wind}) &= \frac{8}{14}I(p_0=6,n_0=2) + \frac{6}{14}I(p_1=3,n_1=3)&\approx 0.89\\
+\text{gain}(\text{Wind}) &= I(p,n) - E(\text{Wind}) &\approx 5\%\\
+\end{align*}
+\subsection*{c}
+\includegraphics[width=0.9\linewidth]{../build/Temperatur}\newline
+\includegraphics[width=0.9\linewidth]{../build/Wettervorhersage}\newline
+\includegraphics[width=0.9\linewidth]{../build/Luftfeuchtigkeit}\newline
+\includegraphics[width=0.9\linewidth]{../build/Wind}\newline
+\subsection*{d}
+Die höchste Trennkraft bei einem einzigen rechtwinkligen Schnitt auf ein einzelnes Attribut hat ein Schnitt auf eine Wettervorhersage der Klasse 1 mit einem Informationsgewinn von $\text{gain}(\text{Wettervorhersage}==1)=22.6\%$.
+
