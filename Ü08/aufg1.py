@@ -11,9 +11,13 @@ def lin(x, m, b):
 Test = pd.read_csv('test.csv')
 Train = pd.read_csv('train.csv')
 
+Test1 = np.array(Test)
+Train1 = np.array(Train)
+print(Train1[:,-1])
+
 # a) Korrelationsmatrix
 corTest = Train.corr()['SalePrice']
-print(abs(corTest).nlargest(4))
+#print(abs(corTest).nlargest(4))
 
 # a) scatterplots
 
@@ -30,19 +34,29 @@ plt.ylabel('SalePrice')
 #plt.show()
 plt.savefig('SP_GC.pdf')
 plt.close()
-'''
-# b) lineare Regression
 
+# b) lineare Regression
+# Datenbereinigung
+'''
+index = Train['OverallQual'].index[Train
+['OverallQual'].apply(np.isnan)]
+Train_index = Train.index.values.tolist()
+print(Train_index.index(i) for i in index)
+'''
 reg = linear_model.LinearRegression()
-reg.fit(Train['OverallQual'].values.reshape(-1, 1),Train['SalePrice'].values.reshape(-1, 1))
+reg.fit(np.split(Train1[:,-1],1460),Train['OverallQual'])
 m = reg.coef_
-par, cov = curve_fit(lin, Train['GarageCars'],Train['SalePrice'])
-print(par)
+b = reg.intercept_
+print(reg.coef_)
+print(reg.intercept_)
+
+
+#par, cov = curve_fit(lin, Train['GarageCars'],Train['SalePrice'])
+#print(par)
 
 #print(Train['OverallQual'])
 x = np.linspace(0,10,1460)
-plt.plot(x, x*m[0]-50000, 'r',label= 'Fit')
-'''
+plt.plot(x, x/m[0]-b/m[0], 'r',label= 'Fit')
 plt.scatter(Train['OverallQual'],Train['SalePrice'], s = 5, alpha = 0.6)
 plt.xlabel('OverallQual')
 plt.ylabel('SalePrice')
