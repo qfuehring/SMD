@@ -1,0 +1,17 @@
+\newpage\section*{Aufgabe 1}
+\subsection*{1a)}
+Liegen die Attribute, die durch einen k-NN-Algorithmus klassifiziert werden sollen mehrere Größenordnungen auseinander, muss auf die Wahl des richtigen Abstandmaßes geachtet werden. Als Beispiel kann eine hochenergetische Messung betrachtet werden:
+
+\begin{equation*}
+\text{Messung:}(\text{Population 1:}\hspace{0.5cm}10~\text{GeV},8~\text{GeV}, 4~\text{GeV},\text{Population 2:}\hspace{0.5cm} 5~\text{eV}, 10~\text{eV})
+\end{equation*}
+\noindent
+Der Algorithmus würde anhand des euklidischen Maßes die 4~GeV Messung in die Messwerte der falschen Größenordnung zuordnen. Das euklidische Maß wäre hier weniger geeignet.
+
+\subsection*{1b)}
+Da der gesamte Lernprozess während des Vorgangs geschieht und nicht wie bei einem Tree offline, benötigt der k-NN-Algorithmus verhältnismäßig lange für die Trainingsphase.
+
+\subsection*{1c)}
+Implementierung des k-NN-Algorithmus im Pythonskript.
+\textbf{ACHTUNG: Zum Ausführen des Skripts bitte das Rootfile von der Homepage in den gleichen Ordner legen!! War zu groß zum Upload.}
+\subsection*{1d)}

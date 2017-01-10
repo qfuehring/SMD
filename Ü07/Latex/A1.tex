@@ -1,0 +1,46 @@
+\newpage\section*{Aufgabe 1}
+\subsection*{a}
+\begin{equation}
+\langle N_\text{on}\rangle = s + \alpha \cdot b
+\end{equation}
+\newpage\section*{Aufgabe 1}
+\subsection*{b}
+$N_\text{on}$ ist poissonverteilt, $N_\text{off}$ gleichverteilt.
+\begin{align}
+N_\text{off}&= b\\
+N_\text{on} &= \sum_{k=0}^{\infty} \frac{s^k}{k!}\exp(-s) + \alpha \cdot N_\text{off}
+\end{align}
+\subsection*{c}
+Likelihood:
+\begin{align}
+\mathcal{F}(b,s|x_i) &=  \frac{s^{x_i-\alpha b}}{(x_i-\alpha b)!}\exp(-s)\\
+\mathcal{F}(b,s|x_1,...,x_n) &= \prod\limits_{i=1}^{n} \frac{s^{x_i-\alpha b}}{(x_i-\alpha b)!}\exp(-s)
+\end{align}
+negative Likelihood:
+\begin{align}
+\mathcal{F}(b,s|x_1,...,x_n) &=  1- \ln \mathcal{L}(b,s|x_1,...,x_n) \\
+&= - \sum\limits_{i=1}^{n} \biggl[\ln{s^{x_i-\alpha b}}-\ln{(x_i-\alpha b)!} - s\biggr]\\
+&\approx - \sum\limits_{i=1}^{n} \biggl[\ln{s^{x_i-\alpha b}}- (x_i-\alpha b)\cdot(\ln(x_i-\alpha b)-1) - s\biggr]  %Stirling formel?
+\end{align}
+\subsection*{d}
+Minima der negativen Likelihood bestimmen:
+\begin{align}
+0 &=\frac{\partial\mathcal{F}(b,s)}{\partial s} \\
+&= \sum_i \frac{\partial_s\mathcal{L}(b,s|x_i)}{\mathcal{L}(b,s|x_i)}\\
+&= \sum_i\biggl((x_i-\alpha b)s^{-1}-1\biggr)\\
+n&= \sum_i\biggl((x_i-\alpha b)s^{-1}\biggr)\label{n}\\
+ns&= \sum_i\biggl(x_i-\alpha b\biggr)\\
+\overline{x}&= \alpha b +s
+\end{align}
+\begin{align}
+0 &=\frac{\partial\mathcal{F}(b,s)}{\partial b} \\
+&\approx \sum_i \partial_b \ln s^{x_i-\alpha b} - \partial_b (x_i-\alpha b)\cdot(\ln(x_i-\alpha b)-1)\\
+&= \sum_i \partial_b (x_i-\alpha b)\ln s + \alpha (\ln(x_i-\alpha b)-1) - (x_i-\alpha b)\partial_b\ln(x_i-\alpha b))\\
+&= \sum_i -\alpha\ln s + \alpha \ln(x_i-\alpha b)\\
+0&= n \ln s - \sum_i \ln(x_i-\alpha b)\label{n2}
+\end{align}
+Einsstzen von n (\ref{n} in \ref{n2}):
+\begin{align}
+0&= \sum_i\biggl((x_i-\alpha b)s^{-1}\biggr) \ln s - \sum_i \ln(x_i-\alpha b)\\
+\ln s\sum_i(x_i-\alpha b)  &= s\sum_i \ln(x_i-\alpha b)
+\end{align}
