@@ -53,23 +53,18 @@ def MdkQ(x,y,n,yerr=None,l=0): #für Polynome n-ten Grades
 def aufg3():
     # a und b
     x, y = np.genfromtxt('aufg_a.csv',delimiter=',',unpack=True)
-    lam = np.array([0.1,0.3,0.7,3,10])
+    lam = np.array([0,0.1,0.3,0.7,3,10])
     x = x[1:]
     y = y[1:]
     plt.plot(x,y,'bx',label='Messwerte')
     x_ = np.linspace(0,8)
-    a = MdkQ(x,y,6)
-    plt.plot(x_,polynom(x_,a),label=r"$\lambda$ = 0.0")
     for i in range(len(lam)):
         lab = r"$\lambda$ = " + str(lam[i])
-        a_ = MdkQ(x,y,6,l=lam[i])
-        a = np.column_stack((a,a_))
-        print(a)
-        plt.plot(x_,polynom(x_,a_),label=lab)
+        a = MdkQ(x,y,6,l=lam[i])
+        plt.plot(x_,polynom(x_,a),label=lab)
     plt.legend(loc='best')
     plt.savefig('./build/3b.png')
     plt.close()
-    Tabellen.Tabelle(a)
 
     # c
 
@@ -83,6 +78,8 @@ def aufg3():
     for i in range(len(lam)):
         lab = r"$\lambda$ = " + str(lam[i])
         a = MdkQ(x,y,6,yerr=yerr,l=lam[i])
+        if i == 5:
+            print(np.round(a,3))
         plt.plot(x_,polynom(x_,a),label=lab)
     plt.legend(loc='best')
     plt.savefig('./build/3c.png')

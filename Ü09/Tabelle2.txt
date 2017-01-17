@@ -1,0 +1,17 @@
+\begin{table}
+\caption{Fit Parameter aufg a und b. Methode der kleinsten Methode ohne Gewichte, mit Regularisierung..}
+\centering
+\label{}
+\begin{tabular}{ SSSSSSSS}
+\toprule
+{$\lambda$}&{$a_0$}&{$a_1$}&{$a_2$}&{$a_3$}&{$a_4$}&{$a_5$}&{$a_6$}	\\
+\midrule
+0.0&.103&	.019&	.061&	-.037&	.008&	-.00734&	2.5e-05\\
+0.1&.224&	-.446&	.494&	-.214&	.044&	-0.00448&	17.6e-05\\
+0.3&0.206&	-0.469&	0.495&	-0.205&	0.041&	0.00402&	15.6e-05\\
+0.7&0.128&	-0.318&	0.348&	-0.139&	0.026&	-0.00248&	9e-05\\
+3&-0.029&	0.016&	0.054&	-0.022&	0.003&	0.00016&	0.2e-05\\
+10&-0.079&	0.132&	-0.055&	0.019&	-0.005&	0.00054&	-2.4e-05\\
+\bottomrule
+\end{tabular}
+\end{table}

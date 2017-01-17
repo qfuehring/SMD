@@ -7,7 +7,7 @@ def Tabelle(spalten,errors=None,pfad="",headline="",caption="",label="",form="")
         print("Tabelle wird gespeichert in Tabelle.txt")
         print("!!!!!!!!!!!!!!!!")
     if errors == None:
-        errors = spalten*0
+        errors = np.zeros([len(spalten),len(spalten[0])])
     #Umgebung
     s = "\\begin{table}"
     s = s + "\n\\caption{" + caption + ".}"
@@ -35,10 +35,10 @@ def Tabelle(spalten,errors=None,pfad="",headline="",caption="",label="",form="")
     for i in range(len(spalten[0])):
         s = s + "\n"
         for j in range(len(spalten)):
-            if not np.isnan(spalten[j][i]): #NaN durch leere Felder ersetzen
-                s = s  + str(spalten[j][i])
-                if errors[j][i] != 0:   #Fehler hinzufügen
-                    s = s + "(" + str(int(errors[j][i])) + ")"
+        #    if not np.isnan(spalten[j][i]): #NaN durch leere Felder ersetzen
+            s = s  + str(spalten[j][i])
+            if errors[j][i] != 0:   #Fehler hinzufügen
+                s = s + "(" + str(int(errors[j][i])) + ")"
             if j < len(spalten)-1:
                 s = s + "&\t"
             elif j == len(spalten)-1:
