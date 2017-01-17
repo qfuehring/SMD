@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.10.28)  16 JAN 2017 15:35
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.10.28)  17 JAN 2017 20:42
  restricted system commands enabled.
 **Ü09.tex
 (./Ü09.tex
@@ -442,7 +442,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.112 seconds)
+luaotfload | main : initialization completed in 0.114 seconds)
 Lua module: fontspec 2016/02/01 2.5a Advanced font selection for LuaLaTeX.
 (/home/robin/.local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-luatex.
 sty
@@ -2058,18 +2058,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-[2
+<negLog.pdf, id=16, 578.16pt x 433.62pt>
+File: negLog.pdf Graphic file (type pdf)
+ <use negLog.pdf>
+Package luatex.def Info: negLog.pdf used on input line 33.
+(luatex.def)             Requested size: 231.2599pt x 173.44492pt.
+ [2
 
-])
+<./negLog.pdf>]
+File: negLog.pdf Graphic file (type pdf)
+
+<use negLog.pdf>
+Package luatex.def Info: negLog.pdf used on input line 96.
+(luatex.def)             Requested size: 231.2599pt x 173.44492pt.
+) [3]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
- [3]
+ [4]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
  (./Ü09.aux
 Language ngerman already loaded; id is 8)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
 Package rerunfilecheck Info: File `Ü09.aux' has not changed.
-(rerunfilecheck)             Checksum: 14E655AE7BA55DE0440C643FC907740A;1656.
+(rerunfilecheck)             Checksum: AB3C2253962F2CF8E35A4B3193A22DF8;2315.
 Package logreq Info: Writing requests to 'Ü09.run.xml'.
 
 \openout1 = Ü09.run.xml
@@ -2077,15 +2088,15 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43815 strings out of 495118
+ 43831 strings out of 495118
  100000,1648299 words of node,token memory allocated
- 1480 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 129 glue, 1 kern, 33 attribute, 57 glue_spec, 33 at
+ 1538 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 135 glue, 1 kern, 37 attribute, 57 glue_spec, 37 at
 tribute_list, 1 write nodes
-   avail lists: 1:3,2:377,3:102,4:19,5:140,6:914,7:459,8:68,9:265,10:4,11:74
- 46222 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:441,3:108,4:25,5:127,6:942,7:498,8:69,9:237,10:8,11:94
+ 46229 multiletter control sequences out of 65536+600000
  89 fonts using 26027071 bytes
- 59i,9n,104p,8814b,873s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 59i,10n,104p,8814b,873s stack positions out of 5000i,500n,10000p,200000b,100000s
 </home/robin/.local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman10-b
 old.otf></home/robin/.local/texlive/2016/texmf-dist/fonts/opentype/public/lm-mat
 h/latinmodern-math.otf></home/robin/.local/texlive/2016/texmf-dist/fonts/opentyp
@@ -2097,10 +2108,10 @@ n/.local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
 </home/robin/.local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmsans10-bo
 ld.otf></home/robin/.local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmro
 man12-bold.otf>
-Output written on Ü09.pdf (3 pages, 37783 bytes).
+Output written on Ü09.pdf (4 pages, 48520 bytes).
 
-PDF statistics: 96 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 131072)
+PDF statistics: 137 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
