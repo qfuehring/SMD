@@ -10,7 +10,7 @@ P(k, \lambda) = \frac{\lambda^k}{k!}\cdot\mathrm{e}^{-\lambda}
 Zu dieser Funktion kann die negative log-Likelihoodfunktion definiert werden:
 
 \begin{equation*}
--\sum_{i=1}^3 \mathrm{ln}(P(k_i,\lambda)) = -( \mathrm{ln}(\frac{\lambda^8}{8!}\cdot\mathrm{e}^{-\lambda})+
+-\sum_{i=1}^3 \mathrm{\ln}(P(k_i,\lambda)) = -( \mathrm{ln}(\frac{\lambda^8}{8!}\cdot\mathrm{e}^{-\lambda})+
 \mathrm{ln}(\frac{\lambda^9}{9!}\cdot\mathrm{e}^{-\lambda})+
 \mathrm{ln}(\frac{\lambda^{13}}{13!}\cdot\mathrm{e}^{-\lambda}))
 \end{equation*}
@@ -27,6 +27,12 @@ mit Logarithmusgesetzen folgt:
 \begin{equation*}
 -\sum_{i=1}^3 \mathrm{ln}(P(k_i,\lambda)) = +3\cdot\lambda -30\cdot\mathrm{ln}(\lambda)+\mathrm{ln}(8!9!13!)
 \end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=.4]{negLog.pdf}
+  \caption{Die berechnete negLogLikelihoodfunktion.}
+\end{figure}
 
 \subsection*{b)}
 Diese kann nun minimiert werden:
@@ -62,3 +68,32 @@ F = F_\text{min}+\frac{n^2}{2}
 \end{equation}
 
 \subsection*{d)}
+
+Die Taylorentwicklung zweiter Ordnung der negativen log-Likelihoodfunktion ergibt sich zu:
+
+%\begin{equation}
+%
+%\end{equation}
+\noindent
+Mit der sich die folgenden Werte analog zu c berechenen.
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+$\lambda_1$ = 8,2836 & erster $\sigma$-Bereich\\
+$\lambda_2$ = 11,9385 &\\
+$\lambda_3$ = 6,7788 & zweiter $\sigma$-Bereich\\
+$\lambda_4$ = 14,1089& \\
+$\lambda_5$ = 5,4737 & dritter $\sigma$-Bereich\\
+$\lambda_6$ = 16,5197&
+\end{tabular}
+\caption{Mit der Taylorentwicklung berechnete Werte analog zu c)}
+\end{table}
+\noindent
+Die Taylorentwicklung und die ursprüngliche negative log-Likelihoodfunktion werden in Abbildung~\ref{d} dargestellt.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.4]{negLog.pdf}
+\caption{Vergleich zwischen der Taylorentwicklung und der negativen log-Likelihood}
+\label{d}
+\end{figure}
